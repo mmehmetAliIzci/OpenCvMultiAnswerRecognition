@@ -1,0 +1,186 @@
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+    <org.opencv.android.JavaCameraView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/color_blob_detection_activity_surface_view" />
+
+
+    <ImageButton
+        android:id="@+id/imageProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/icon"
+        android:onClick="takePicture"/>
+
+    <!--
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|top">
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="Dist+"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processDistPlus"
+            android:id="@+id/button3"
+            android:layout_marginEnd="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="+par1"
+            android:layout_weight="0.30"
+            android:textSize="8dp"
+            android:onClick="processParPlus"
+            android:id="@+id/button2"
+            android:layout_below="@+id/distTxt"
+            android:layout_toStartOf="@+id/button" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="+ minR"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processMinRPlus"
+            android:id="@+id/button6"
+            android:layout_above="@+id/button5"
+            android:layout_toEndOf="@+id/button4" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="+ maxR"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processMaxRPlus"
+            android:id="@+id/button"
+            android:layout_alignTop="@+id/button2"
+            android:layout_alignStart="@+id/minRTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min"
+
+            android:id="@+id/par1Txt"
+            android:layout_below="@+id/button7"
+            android:layout_alignStart="@+id/button7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max"
+            android:id="@+id/maxTxt"
+            android:layout_alignTop="@+id/par1Txt"
+            android:layout_alignStart="@+id/button" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="Dist-"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processDistMinus"
+            android:id="@+id/button4"
+            android:layout_below="@+id/button3"
+            android:layout_alignStart="@+id/button3" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="- minR"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processMinRMinus"
+            android:id="@+id/button5"
+            android:layout_alignTop="@+id/button4"
+            android:layout_toEndOf="@+id/button4" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="-par1"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processParMinus"
+            android:id="@+id/button7"
+            android:layout_below="@+id/button2"
+            android:layout_alignStart="@+id/button2" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="- maxR"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processMaxRMinus"
+            android:id="@+id/button8"
+            android:layout_above="@+id/maxTxt"
+            android:layout_alignEnd="@+id/button" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="+par2"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processPar2Plus"
+            android:id="@+id/button9"
+            android:layout_below="@+id/par1Txt"
+            android:layout_alignEnd="@+id/par2Txt" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:text="-par2"
+            android:textSize="8dp"
+            android:layout_weight="0.30"
+            android:onClick="processPar2Minus"
+            android:id="@+id/button10"
+            android:layout_below="@+id/maxTxt"
+            android:layout_alignStart="@+id/maxTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min"
+            android:id="@+id/distTxt"
+            android:layout_below="@+id/button4"
+            android:layout_alignStart="@+id/button4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="minRTxt"
+            android:id="@+id/minRTxt"
+            android:layout_alignTop="@+id/distTxt"
+            android:layout_alignStart="@+id/button5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min"
+            android:id="@+id/par2Txt"
+            android:layout_below="@+id/button9"
+            android:layout_toStartOf="@+id/button10" />
+    </RelativeLayout>
+    -->
+
+</FrameLayout >
